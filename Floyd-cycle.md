@@ -34,3 +34,27 @@ This implies that when the slow pointer is reset and both pointers move one step
 
 ### Example:
 Given a list `[1, 3, 4, 2, 2]`, the algorithm will detect the cycle at node with value `2`.
+
+
+from typing import List
+
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        # Phase 1: Finding the intersection point in the cycle
+        tortoise = nums[0]
+        hare = nums[0]
+        
+        while True:
+            tortoise = nums[tortoise]
+            hare = nums[nums[hare]]
+            if tortoise == hare:
+                break
+        
+        # Phase 2: Finding the entrance to the cycle
+        tortoise = nums[0]
+        while tortoise != hare:
+            tortoise = nums[tortoise]
+            hare = nums[hare]
+        
+        return tortoise
+
