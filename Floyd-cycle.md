@@ -35,9 +35,9 @@ This implies that when the slow pointer is reset and both pointers move one step
 ### Example:
 Given a list `[1, 3, 4, 2, 2]`, the algorithm will detect the cycle at node with value `2`.
 
+## Code
 
-from typing import List
-
+```python
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         # Phase 1: Finding the intersection point in the cycle
