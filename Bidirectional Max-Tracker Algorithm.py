@@ -1,4 +1,4 @@
-class Solution
+class Solution:
     def trap(self, height: List[int]) -> int:
 
     """
